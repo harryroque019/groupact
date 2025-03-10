@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using groupact;
 
 class MainProgram
@@ -13,39 +13,79 @@ class MainProgram
         while (productCount < productLimit)
         {
 
-            Console.WriteLine("Enter Product Name: ");
-            string productName = Console.ReadLine();
-            Console.Clear();
+            Console.WriteLine(@"
+ _     ___ _  _     _   _   _   _       _ ___                   _   
+|_ |\ | | |_ |_)   |_) |_) / \ | \ | | /   |    |\ |  /\  |\/| |_ o 
+|_ | \| | |_ | \   |   | \ \_/ |_/ |_| \_  |    | \| /--\ |  | |_ o 
+ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ 
+|______|______|______|______|______|______|______|______|______|______|
+");
+                string productName = Console.ReadLine();
+                Console.Clear();
 
-            Console.WriteLine("Enter Product Price: ");
-            int productPrice = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+                int productPrice;
+                while (true)
+                {
+                    Console.WriteLine(@"
+ _     ___ _  _     _   _   _   _       _ ___    _   _  ___  _  _   
+|_ |\ | | |_ |_)   |_) |_) / \ | \ | | /   |    |_) |_)  |  /  |_ o 
+|_ | \| | |_ | \   |   | \ \_/ |_/ |_| \_  |    |   | \ _|_ \_ |_ o 
+ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ 
+|______|______|______|______|______|______|______|______|______|______|
+");
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out productPrice))
+                {
+                    Console.Clear();
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("===========================");
+                    Console.WriteLine("|                         |");
+                    Console.WriteLine("| WRONG INPUT, TRY AGAIN! |");
+                    Console.WriteLine("|                         |");
+                    Console.WriteLine("===========================");
+                }
+            }
 
-            Console.WriteLine("Enter Product Description: ");
+            Console.WriteLine(@"
+ _     ___ _  _     _   _   _   _       _ ___    _   _  __  _  _  ___  _ ___ ___  _         
+|_ |\ | | |_ |_)   |_) |_) / \ | \ | | /   |    | \ |_ (_  /  |_)  |  |_) |   |  / \ |\ | o 
+|_ | \| | |_ | \   |   | \ \_/ |_/ |_| \_  |    |_/ |_ __) \_ | \ _|_ |   |  _|_ \_/ | \| o
+ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ ______ 
+|______|______|______|______|______|______|______|______|______|______|______|______|______|
+");
             string productDescription = Console.ReadLine();
-            Console.Clear();
+                Console.Clear();
 
-            newProduct.InsertData(productName, productPrice, productDescription);
+                newProduct.InsertData(productName, productPrice, productDescription);
 
-            productCount++;
+                productCount++;
 
-            if (productCount == productLimit)
-            {
-                Console.WriteLine("You have reached the maximum limit of adding products.");
+                if (productCount == productLimit)
+                {
+                Console.WriteLine("========================================================");
+                Console.WriteLine("|                                                      |");
+                Console.WriteLine("|YOU HAVE REACHED THE MAXIMUM LIMIT OF ADDING PRODUCTS!|");
+                Console.WriteLine("|                                                      |");
+                Console.WriteLine("========================================================");
                 break;
             }
 
-            Console.WriteLine("Do you want to add another product? (yes/no)");
+            Console.WriteLine("==============================================");
+            Console.WriteLine("|                                            |");
+            Console.WriteLine("|DO YOU WANT TO ADD ANOTHER PRODUCT? (YES/NO)|");
+            Console.WriteLine("|                                            |");
+            Console.WriteLine("==============================================");
             string answer = Console.ReadLine().ToLower();
-            Console.Clear();
+                Console.Clear();
 
             if (answer != "yes")
             {
                 Menu.Main();
             }   
-
         }
-        
     }
-
 }
