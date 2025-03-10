@@ -38,3 +38,4 @@ C:\Users\ko\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\refint\groupac
 C:\Users\ko\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\groupact.pdb
 C:\Users\ko\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\groupact.genruntimeconfig.cache
 C:\Users\ko\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\ref\groupact.dll
+C:\Users\ko\source\repos\ConsoleApp1\ConsoleApp1\obj\Debug\net8.0\groupact.sourcelink.json

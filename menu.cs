@@ -17,7 +17,8 @@ public static class Menu
                     MainProgram.AddNewProduct();
                     break;
                 case "2":
-                ShowDB.ShowAllData();
+                    ShowDB show = new ShowDB();
+                show.ShowAllData();
                     break;
                 case "3":
                     return;

@@ -12,42 +12,45 @@ namespace groupact
         private string connString;
 
         public ShowDB()
-            {
+        {
             connString = $"Server={server};Database={database};User ID={username};Password={password};";
-            }
+        }
+
         public void ShowAllData()
-        { 
-                using (MySqlConnection conn = new MySqlConnection(connString))
+        {
+            using (MySqlConnection conn = new MySqlConnection(connString))
+            {
+                try
                 {
-                    try
+                    conn.Open();
+                    Console.WriteLine("Connected to MySQL!\n");
+
+                    string query = "SELECT * FROM products";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        conn.Open();
-                        Console.WriteLine("Connected to MySQL!");
-
-                        string query = "SELECT * FROM products";
-
-                        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            using (MySqlDataReader reader = cmd.ExecuteReader())
+                            Console.WriteLine("------------------------------------------------------------");
+                            Console.WriteLine("ID\tName\t\tPrice\t\tDescription");
+                            Console.WriteLine("------------------------------------------------------------");
+
+                            while (reader.Read())
                             {
-                                Console.WriteLine("\nProduct List:");
-                                Console.WriteLine("ID\tName\t\tPrice\t\tDescription");
+                                Console.WriteLine($"{reader["product_id"]}\t{reader["productName"],-15}\t{reader["productPrice"],-10}\t{reader["productDescription"]}");
+                            }
 
-                                while (reader.Read())
-                                {
-                                    Console.WriteLine($"{reader["id"]}\t{reader["productName"]}\t\t{reader["productPrice"]}\t\t{reader["productDescription"]}");
-                                }
-
-                                Console.WriteLine("Press any key to return to menu...");
-                                Console.ReadKey();
-                             }
+                            Console.WriteLine("------------------------------------------------------------");
+                            Console.WriteLine("\nPress any key to return to menu...");
+                            Console.ReadKey();
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Error: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
                 }
             }
         }
     }
+}
