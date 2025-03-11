@@ -1,19 +1,19 @@
 🔴Members:  
 
-Garcia, Tyron - tester, 
+Garcia, Tyron - tester
 
-Joshua Pagador, Pañoso - tester, 
+Joshua Pagador, Pañoso - tester
 
-Tuscano, Shem - tester, 
+Tuscano, Shem - tester
 
-Barcial, Trisha - tester, 
+Barcial, Trisha - tester
 
-Timola, Nhil Charlie -tester, 
+Timola, Nhil Charlie -tester
 
-Tampugao, Sharmaine - tester, 
+Tampugao, Sharmaine - tester
 
-Flores, Loridean - tester, 
+Flores, Loridean - tester
 
-Ybarrita, Kent - Frontend Dev, 
+Ybarrita, Kent - Frontend Dev/Programmer
 
-Rufo, John Mar - Backend Dev, 
+Rufo, John Mar - Backend Dev/Programmer
