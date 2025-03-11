@@ -7,4 +7,5 @@ Timola, Nhil Charlie -tester,
 Tampugao, Sharmaine - tester, 
 Flores, Loridean - tester, 
 Ybarrita, Kent - Frontend Dev, 
+
 Rufo, John Mar - Backend Dev, 
