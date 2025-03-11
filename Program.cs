@@ -71,6 +71,7 @@ class MainProgram
                 Console.WriteLine("|YOU HAVE REACHED THE MAXIMUM LIMIT OF ADDING PRODUCTS!|");
                 Console.WriteLine("|                                                      |");
                 Console.WriteLine("========================================================");
+                Menu.Main();
                 break;
             }
 
